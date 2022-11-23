@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - Kelly Bootstrap Template</title>
+  <title>Chapter - 5 </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,7 +38,10 @@
 <body>
 
   <main id="main">
-
+    <div class="section-title">
+      <h2> First Order System   </h2>
+      <!-- <p>using MAX6675 K-Thermocouple to Digital Converter IC </p> -->
+    </div>
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
@@ -50,17 +53,10 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                  <img src="assets/img/portfolio/firstorder.png" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
-
+                
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -68,29 +64,117 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3>Introduction  </h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                A first order control system is defined as a type of control system whose input-output relationship (also known as a transfer function) is a first-order differential equation. A first-order differential equation contains a first-order derivative, but no derivative higher than the first order. The order of a differential equation is the order of
+                 the highest order derivative present in the equation.
+                
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Transfer Function</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                The transfer function (input-output relationship) for this control system is defined as:<br><br>
+
+      C(s)/R(s)=k/Ts+1<br>
+
+Where:<br>
+
+K is the DC Gain (DC gain of the system ratio between the input signal and the steady-state value of output)<br>
+T is the time constant of the system (the time constant is a measure of how quickly a first-order system responds to a unit step input)<br><br>
+Remember that the order of a differential equation is the order of the highest order derivative present in the equation. We evaluate this with respect to s.<br>
+                 
+                
               </p>
             </div>
           </div>
+          <h1> First Order Control System Transfer Function</h1><br>
+          <p>
+            The poles of the transfer function are the value of Laplace Transform variable(s), which cause the transfer function to become infinite.
 
+The denominator of a transfer function is actually the poles of function.<br><br>
+
+
+
+
+<!-- (Note that to define an initial state  y0 , we will need to specify the initial position  x0  as well as the velocity  x˙0 .) -->
+
+          <h1> Zeros of a Transfer Function</h1></br>
+<p> 
+  The zeros of the transfer function are the values of the Laplace Transform variable(s), that causes the transfer function becomes zero.
+
+  The nominator of a transfer function is actually the zeros of the function
+  </p>
+  <h1>First Order Control System</h1>
+  <p>Here we discuss the first-order control system without zeros. The first-order control system tells us the speed of the response that what duration it reaches the steady-state.<br><br>
+    If the input is a unit step, R(s) = 1/s so the output is a step response C(s). The general equation of 1st order control system is, i.eis the transfer function.
+
+    There are two poles, one is the input pole at the origin s = 0 and the other is the system pole at s = -a, this pole is at the negative axis of the pole plot. We can find the pole and zeros in MATLAB SOFTWARE by using the command pzmap (which stands for pole-zero maps).
+    
+    We now taking the inverse transform so total response becomewhich is the sum of forced response and natural response.
+    
+    Due to the input pole at the origin, produces the forced response as name describe by itself that giving forced to the system so it produces some response which is forced response and the system pole at -a produces a natural response which is due to the transient response of the system.
+
+
+    <h1>Higher Order Integrators</h1>
+    <p>  A great deal of work has investigated ODE integration techniques that are more accurate than Euler integration. Rather than approximate the dynamics function as a first order Taylor expansion,
+       they may use higher order terms to achieve lower approximation error. A popular class of higher order methods are the Runge-Kutta methods, which use multiple evaluations of the dynamics function to achieve far lower error 
+       than standard Euler integration.<br><br>
+       More advanced methods may also use adaptive step size, which take smaller steps where the dynamics function is found to be more highly varying.<br>
+
+      Many numerical libraries have a variety of integrators to choose from. For example, the below plot shows an integrator used in Scipy library, which is, in fact, exact for this dynamics function. </p>
+      <h1> First Order Control System </h1>
+      <p> 
+
+        Here we discuss the first-order control system without zeros. The first-order control system tells us the speed of the response that what duration it reaches the steady-state.<br><br>
+        If the input is a unit step, R(s) = 1/s so the output is a step response C(s). The general equation of 1st order control system is, i.eis the transfer function.
+
+There are two poles, one is the input pole at the origin s = 0 and the other is the system pole at s = -a, this pole is at the negative axis of the pole plot. We can find the pole and zeros in MATLAB SOFTWARE by using the command pzmap (which stands for pole-zero maps).<br><br>
+
+We now taking the inverse transform so total response becomewhich is the sum of forced response and natural response.
+
+Due to the input pole at the origin, produces the forced response as name describe by itself that giving forced to the system so it produces some response which is forced response and the system pole at -a produces a natural response which is due to the transient response of the system.<br><br>
+After some calculation, here General form of the first-order system is C(s) = 1-e-at that is equal to forced response which is “1” and natural response which is equal to “e-at”. The only thing which is needed to find is the parameter “a”.
+
+Many techniques like a differential equation or inverse Laplace Transform, these all solve the total response but these are time-consuming and laborious.
+
+The use of poles, zeros, and there some fundamental concept gives us the qualitative information to solve the problems and due to these concepts, we can easily tell the speed of response and the time of a system to reach the steady-state point.<br><br>
+
+Let us describe the three transient response performance specifications, the time constant, rise time, and settling time for a first-order control system.<br>
+        </p>
+        <h3> Rise Time of a First Order Control System </h3>
+        <p> The rise time is defined as the time for the waveform to go from 0.1 to 0.9 or 10% to 90% of its final value. For the equation of rising time, we put 0.1 and 0.9 in the general first-order system equation respectively.</p>
+        <h3> Settling Time of a First Order Control System </h3>
+        <p>The settling time is defined as the time for the response to reach and stay within 2% of its final value. We can limit the percentage up to 5% of its final value. Both percentages are a consideration.
+
+          The equation of settling time is given by Ts = 4/a.
+          
+          By using these three transient response specifications, we can easily compute the step response of a given system that’s why this qualitative technique is useful for order systems equations.</p>
+          <h1> Conclusion</h1>
+          <p> After learning all things related to 1st order control system, we come to the following conclusions:
+
+           <li> A pole of the input function generates the form of the forced response. It is because of the pole at the origin which generates a step function at the output.<br>
+           <li> A pole of the transfer function generates a natural response. It the pole of the system.<br>
+           <li> A pole on the real axis generates an exponential frequency of the form e-at. Thus, the farther the pole to the origin, the faster the exponential transient response will decay to zero.<br>
+           <li> Using poles and zeros, we can speed up the performance of the system and get the desired output.<br></p>
         </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
-
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <div class="credits">
+        
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/ -->
+       Built and designed by EIC students<br>
+       Reference <a href="https://circuitdigest.com/microcontroller-projects/arduino-pid-temperature-controller">Arduino PID Temperature Controller</a>
+        </div>
+     </div>
+    </div>
+  </footer><!-- End  Footer -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
