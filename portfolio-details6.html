@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - Kelly Bootstrap Template</title>
+  <title>Chapter - 6 </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,7 +38,10 @@
 <body>
 
   <main id="main">
-
+    <div class="section-title">
+      <h2> Second Order System   </h2>
+      <!-- <p>using MAX6675 K-Thermocouple to Digital Converter IC </p> -->
+    </div>
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
@@ -50,17 +53,10 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                  <img src="assets/img/portfolio/secondorder.png" alt="">
                 </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                </div>
-
+                
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -68,29 +64,115 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3>Introduction  </h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                The second-order system is unique in this context, because its characteristic equation may have complex conjugate roots. The second-order system is the lowest-order system capable of an oscillatory response to a step input. Typical examples are the spring-mass-damper system and the electronic RLC circuit. Second-order systems with potential oscillatory responses require two different and independent types of energy storage, such as the inductor and the capacitor in RLC filters, or a spring and an inert mass. The transfer function of the general second-order system has two poles in one of three configurations: both poles can be real-valued and on the negative real axis, they can form a double-pole on the negative real axis, or they can form a complex conjugate pole pair. 
+                
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Transfer Function</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                The unit step response depends on the roots of the characteristic equation. If both roots are real-valued, the second-order system behaves like a chain of two first-order systems, and the step response has two exponential components. If the roots are complex, the step response is a harmonic oscillation with an exponentially decaying amplitude.
+
+K is the DC Gain (DC gain of the system ratio between the input signal and the steady-state value of output)<br>
+T is the time constant of the system (the time constant is a measure of how quickly a first-order system responds to a unit step input)<br><br>
+Remember that the order of a differential equation is the order of the highest order derivative present in the equation. We evaluate this with respect to s.<br>
+                 
+                
               </p>
             </div>
           </div>
+          <h1> Second Order Control System Transfer Function</h1><br>
+          <p>
+            The poles of the transfer function are the value of Laplace Transform variable(s), which cause the transfer function to become infinite.
 
+The denominator of a transfer function is actually the poles of function.<br><br>
+The second-order system is unique in this context, because its characteristic equation may have
+ complex conjugate roots. The second-order system is the lowest-order system capable of an oscillatory
+  response to a step input. Typical examples are the spring-mass-damper system and the electronic RLC circuit. 
+  Second-order systems with potential oscillatory responses require two different and independent types of energy 
+  storage, such as the inductor and the capacitor in RLC filters, or a spring and an inert mass. 
+  The transfer function of the general second-order system has two poles in one of three configurations: 
+  both poles can be real-valued, and on the negative real axis, they can form a double-pole on the negative real axis, 
+or they can form a complex conjugate pole pair. <br>
+<h1>Closed-Loop Stability </h1>
+<p> A second-order system in standard form has a characteristic equation s2 + 2ζωns + ωn2 = 0, and if ζ < 0, the system is underdamped and the poles are a complex conjugate pair. The roots for this system are:<br>
+  Using standard trigonometry, it can be shown that . Hence, the line from the origin through p1 forms a line of constant damping ratio. This allows us to define a region of acceptable system damping by requiring that the poles lie within a specified region on the pole-zero map.
+
+  Within the shaded region in Figure 5.18b, the system will have a damping ratio equal to or less than . For example, in order to obtain a damping ratio of 0.5 or less, the system poles need to lie inside a region defined by β=60°.
+  
+ <!-- the effect of poles in a second-order system moving along the constant  line, and Figure 5.19b shows the corresponding time response. It can be seen that the overshoot remains constant with constant damping ratio. Further, we are often interested in how large the overshoot of a system is in response to a change in the input. The relation between the percentage overshoot, mos, and the damping ratio, ζ, is -->
+</p>
+
+
+
+<!-- (Note that to define an initial state  y0 , we will need to specify the initial position  x0  as well as the velocity  x˙0 .) -->
+
+          <h1> Zeros of a Transfer Function</h1></br>
+<p> 
+  The standard second-order system has no zeros in the transfer function. If the system is modified to include a zero in it, the overshoot and settling time are greatly affected by the location of that zero.<br>
+  </p>
+  <h1>Second Order Control System</h1>
+   <p> The Laplace transform is a particularly elegant way to solve linear differential equations with constant coefficients.
+     The Laplace transform describes signals and systems not as functions of time, but as functions of a complex variable . <br>
+     When transformed into the Laplace domain, differential equations become polynomials of . Solving a differential equation 
+     in the time domain becomes a simple polynomial multiplication and division in the Laplace domain. However, the input and output 
+     signals are also in the Laplace domain, and any system response must undergo an inverse Laplace transform to become a meaningful
+      time-dependent signal. In this chapter, the Laplace transform is introduced, and the manipulation of signals and systems 
+      in the Laplace domain explained. Tools to find time-domain and Laplace-domain correspondences are presented.</p>
+
+
+    <h1>Higher Order Integrators</h1>
+    <p>  A great deal of work has investigated ODE integration techniques that are more accurate than Euler integration. Rather than approximate the dynamics function as a first order Taylor expansion,
+       they may use higher order terms to achieve lower approximation error. A popular class of higher order methods are the Runge-Kutta methods, which use multiple evaluations of the dynamics function to achieve far lower error 
+       than standard Euler integration.<br><br>
+       More advanced methods may also use adaptive step size, which take smaller steps where the dynamics function is found to be more highly varying.<br>
+
+      Many numerical libraries have a variety of integrators to choose from. For example, the below plot shows an integrator used in Scipy library, which is, in fact, exact for this dynamics function. </p>
+      <h1> Difference between First and Second order transfer function </h1>
+      
+        <li>1st order system has one degree of freedom<br>
+        <li>2nd order system has two degrees of freedom<br><br>
+        Degrees of Freedom: Number of parameters through which you can control the output of the system.<br>
+        
+        For example by varying  τ  you can control the output  y(t)  of a 1st order comtrol system.
+        Similarly output  y(t)  of 2nd order system depends upon two parameters  ζ  and  ωn<br>
+      
+        
+        <!-- <h3> Rise Time of a First Order Control System </h3>
+        <p> The rise time is defined as the time for the waveform to go from 0.1 to 0.9 or 10% to 90% of its final value. For the equation of rising time, we put 0.1 and 0.9 in the general first-order system equation respectively.</p>
+        <h3> Settling Time of a First Order Control System </h3>
+        <p>The settling time is defined as the time for the response to reach and stay within 2% of its final value. We can limit the percentage up to 5% of its final value. Both percentages are a consideration.
+
+          The equation of settling time is given by Ts = 4/a. -->
+          
+          <!-- By using these three transient response specifications, we can easily compute the step response of a given system that’s why this qualitative technique is useful for order systems equations.</p> -->
+          <!-- <h1> Conclusion</h1>
+          <p> After learning all things related to 1st order control system, we come to the following conclusions:
+
+           <li> A pole of the input function generates the form of the forced response. It is because of the pole at the origin which generates a step function at the output.<br>
+           <li> A pole of the transfer function generates a natural response. It the pole of the system.<br>
+           <li> A pole on the real axis generates an exponential frequency of the form e-at. Thus, the farther the pole to the origin, the faster the exponential transient response will decay to zero.<br>
+           <li> Using poles and zeros, we can speed up the performance of the system and get the desired output.<br></p> -->
         </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
-
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <div class="credits">
+        
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/ -->
+       Built and designed by EIC students<br>
+       Reference <a href="https://circuitdigest.com/microcontroller-projects/arduino-pid-temperature-controller">Arduino PID Temperature Controller</a>
+        </div>
+     </div>
+    </div>
+  </footer><!-- End  Footer -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
