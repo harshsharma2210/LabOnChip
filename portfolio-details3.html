@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PID</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Kelly - v4.7.0
+  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+    <div class="section-title">
+      <h2>PID Controller  </h2>
+      <!-- <p>using MAX6675 K-Thermocouple to Digital Converter IC </p> -->
+    </div>
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/PID.png" alt="">
+                </div>
+
+                <!-- <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
+                </div> -->
+
+                <!-- <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                </div> -->
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Introduction </h3>
+              <ul>
+                A proportional–integral–derivative controller (PID controller or three-term controller) is a control loop mechanism employing feedback that is widely used in 
+                industrial control systems and a variety of other applications requiring continuously modulated control. 
+                A PID controller continuously calculates an error value e(t) as the difference between a desired setpoint (SP)
+                 and a measured process variable (PV) and applies a correction based on proportional, integral, and derivative terms 
+                 (denoted P, I, and D respectively), hence the name.
+
+                
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>  Fundamental Operation</h2>
+              <p>
+                Fundamental operation
+
+                A block diagram of a PID controller in a feedback loop. r(t) is the desired process value or 
+                setpoint (SP), and y(t) is the measured process value (PV).
+                <!-- The distinguishing feature of the PID controller is the ability to use the three control terms of proportional, integral and derivative influence on the controller output to apply accurate and optimal control. The block diagram on the right shows the principles of how these terms are generated and applied. It shows a PID controller, which continuously calculates an error value {\displaystyle e(t)}e(t) as the difference between a desired setpoint {\displaystyle {\text{SP}}=r(t)}{\displaystyle {\text{SP}}=r(t)} and a measured process variable {\displaystyle {\text{PV}}=y(t)}{\displaystyle {\text{PV}}=y(t)}: {\displaystyle e(t)=r(t)-y(t)}{\displaystyle e(t)=r(t)-y(t)}, and applies a correction based on proportional, integral, and derivative terms. The controller attempts to minimize the error over time by adjustment of a control variable {\displaystyle u(t)}u(t),
+                 such as the opening of a control valve, to a new value determined by a weighted sum of the control terms. -->
+         
+                
+              </p>
+            </div>
+          </div>
+         <h1>The Problem</h1>
+         <p>The problem
+          Our system has an input value taken in by sensors every x time units (minutes, seconds, milliseconds; in abstract it doesn’t matter). Depending on said value a proper output response has to be calculated in order to reach a desired state. To throw in some examples, we could be talking about:
+          
+          A thermostat. The input value is the current temperature and the output is the “power” of heating system.
+          A robotic arm. The input value is its position and the output is the voltage and direction to apply to its actuators.
+          A valve controlling water flow. The input is the current flow and the output is the speed and direction of the motor attached to the valve, 
+          allowing more or less liquid to pass through.<br><br>
+          A cart trying to arrive to a destination point. The input is the distance between here and the goal, and the output is the speed and the direction with which to proceed.
+          A quadcopter trying to balance itself. The input is the angle it’s currently leaning on and the output is the power to apply to each rotor.
+          From a purely theoretical standpoint the problem can be defined by variable representing the current state of the system (temperature, flow, position,…). The input read every period is the process variable (or PV); the goal of our control system is to reach and maintain a certain value for this variable, called the SetPoint (or SP). At any given moment t it’s useful to consider
+           the current error, given by the difference between the SetPoint and the process variable, e(t) = SP-PV.<br><br>
+           The core of PID techniques is to tune the output on the system based on the behaviour of the error function. Said output is (in theory) the result of the following formula:
+ <h2>Out(t) = Kpe(t) + Ki<span>&#8747;</span>edt + Kd de/dt</h2><br><br>
+
+where t is the time and e is the error function. e(t) is nothing but the error in the system (SP-PV, the actual value minus what we want to achieve) at time instant t. Kp, Ki and Kd are the coefficients for each component (proportional, integral and derivative) and the parameters to be changed to tune the effectiveness of the formula.
+          </p><br><br>
+        <h1>  Proportional</h1>
+<p>This is the simplest and most straightforward to understand part of a PID function. To compute the output at time t it takes the error value and multiply it by a coefficient (Kp), and that’s it.
+
+Take the flow control device example. We want to reach a current of 80 liters per minute and we’re currently sitting at 40. the error is<br>
+
+e(t) = SP -PV = 80–40= 40<br>
+
+So the PID function (considering only the proportional component) returns<br>
+
+Out(t) = Cp * e(t) = 0.5 * 40 = 20<br>
+
+which means the valve will open with 20% of its top speed. In this scenario, if we ever reach a flow higher than expected the output would change in sign, prompting the valve to close. Imagine PV=90; e(t) = -10 and Out(t) = -5, so it would close at 5% power.<br>
+
+At this point you might be wondering why working in percentages while you could simply turn full throttle in a direction or the other depending on the error sign. You can probably also guess the answer.<br><br>
+
+Maybe we want to avoid overshooting as much as possible. In the cart example, we might be constrained to never pass the SetPoint, so we need to approach it more slowly. In general, it is preferable to arrive at the SetPoint a 
+few seconds later instead of oscillating back and forward a couple of times because we were too hasty. It depends on the goal of the control.
+
+Typically the device needs to be tested with different Kp values to see how fast you can go without jeopardizing stability.</p><br><br>
+<h1>Integral</h1>
+The proportional is very straightforward, but is also prone to problematic situations.
+
+Imagine that Kp is very small to avoid overshooting and time is not an issue. In the cart example everything would turn out ok; it approaches the destination as slowly as it can to avoid passing it. In the water current example problems may arise.<br><br>
+
+Let’s say the valve moves very slowly towards the desired flow rate; 
+in a perfect world it would work. Most likely however the motor attached to the valve will stop moving if we
+ don’t supply enough power (in terms of PWM duty cycle, for those familiar with the tool), so there is a limit to how slow it can get. 
+Also, if the water flow is strong enough and the valve is trying to close it a low output could not be enough to win against the liquid pressure.<br><br>
+
+So what happens? In the best case scenario, the process variable gets close to the SetPoint but doesn’t budge from there. Maybe the error is as low as 
+5 liters per minute, but Kp isn’t enough and the output just keeps the motor stuck.<br><br>
+
+Consider another example, a steaming iron to be heated to 150 degrees (Celsius). We implemented a simple Proportional control and checked that everything works as expected, but forgot that some countries have different power levels for AC supply.
+ An output of 10% to the heating resistors is enough to get the iron from 140° to 150° when you power it with a 230V line, but it permanently fluctuates around 140° in the US, at 208V.<br><br>
+
+The solution is to take in account the error over time, which is exactly the job of the integral component. This is where a PID approach really shines: when approaching the problem with a naive mindset one might unknowingly implement the proportional part, but chances 
+are timing issues will result in a cluster of raw delays and
+ approximate calculations that might get the job done but are frail and confused.<br><br>
+ [the integral of a function f] is defined […] as the signed area of the region in the xy-plane that is bounded by the graph of f, the x-axis and the vertical lines x = a and x = b. The area above the x-axis adds to the total and that below the x-axis subtracts from the total.
+<h1>Derivative</h1>
+Last but not least, the derivative component. Well, in a way, this is the least frequently used component. Most system can make do with just P and I, with the derivative bringing only slight improvements.<br>
+
+To begin with, the derivative component is the only one that would never reach the SetPoint on its own;
+ both proportional and integral respond to error with a minimum output, while here as long as the error doesn’t 
+ change the derivative will remain zero.
+
+When you need to take stability strongly into account (as in the drone example) however this will save your life without being particularly difficult to implement.<br><br>
+This solves mainly two problems:
+
+<li>It can avoid going too fast. A high derivative coefficient Kd will choke down the output if the error is already decreasing. 
+This can be really helpful to slowly approach the SetPoint and avoid overshooting.
+ Think of it as a centrifugal governor.</li><br>
+<li>It reacts to sudden change. Pretend I’m a robotic arm happily sitting on the SetPoint. No further move is required. 
+Suddenly I collide with an object that pushes me far from my goal;
+ if I immediately detect an error of 10 cm due to the impact I can presume the next reading will be even more off 
+ and I can fire up in prevision of that. In the same way but even more extreme, a quadcopter trying to balance must
+  react immediately to every small movement, making the derivative component a must have.</li><br>
+It’s useful, but also very difficult to tune. An excessive reactivity to change might make your system susceptible to noise.
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        <div class="credits">
+        
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/ -->
+       Built and designed by EIC students<br>
+       Reference <a href="https://circuitdigest.com/microcontroller-projects/arduino-pid-temperature-controller"> PID controller</a>
+        </div>
+     </div>
+    </div>
+  </footer><!-- End  Footer -->
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
