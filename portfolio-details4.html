@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Chapter -2</title>
+  <title>Chapter - 4 </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -53,7 +53,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/pic-1.jpg" alt="">
+                  <img src="assets/img/portfolio/dynamic.png" alt="">
                 </div>
 
                 
@@ -83,70 +83,95 @@
               </p>
             </div>
           </div>
-          <h1> what are Dynamics & Control</h1><br>
+          <h1> What are Dynamics & Control ?</h1><br>
           <p>
-            The purpose of dynamics is to study how time and force act on a mechanism, while the purpose of controls is to study how a system should respond to errors and disturbances. At this point, we have described how to reason about the positions of robots and how to generate continuous paths. But actually executing those paths requires us to think much more carefully about the physics of robot mechanisms, and the role of time and velocity. Even the strongest robots cannot instantaneously change velocities, and driving and flying robots cannot move sideways.
+            The purpose of dynamics is to study how time and force act on a mechanism, while the purpose of controls is to study how a system should respond to errors and disturbances. At this point, we have described how to reason about the positions of robots and how to generate continuous paths. But actually executing those paths requires us to think much more carefully about the physics of robot mechanisms, and the role of time and velocity. Even the strongest robots cannot instantaneously change velocities, and driving and flying robots cannot move sideways.<br><br>
 
-It is through the use of control that an industrial robot can move to a position with sub-millimeter accuracy, and an aircraft can fly for thousands of kilometers but land on an airstrip a few meters wide. It is also a means for understanding locomotion and reflexes in the biological sensorimotor system. It is important to note that both dynamics and control are deep fields of study that are more than one hundred years old, and yet they are still undergoing significant change! Classical approaches rely heavily on mathematical analysis, while more modern approaches to control rely on computation as a key tool. Due to this depth, to master these fields requires years of specialized investigation, and this part of the book can only survey the main points as they relate to robotics. We will see some of both the historical and modern approaches in the next few chapters.
+It is through the use of control that an industrial robot can move to a position with sub-millimeter accuracy, and an aircraft can fly for thousands of kilometers but land on an airstrip a few meters wide. It is also a means for understanding locomotion and reflexes in the biological sensorimotor system. It is important to note that both dynamics and control are deep 
+fields of study that are more than one hundred years old, and yet they are still undergoing significant change! Classical
+ approaches rely heavily on mathematical analysis, while more modern approaches to control rely on computation as a key tool. 
+ Due to this depth, to master these fields requires years of specialized investigation, and this part of the book can only survey
+  the main points as they relate to robotics. We will see some of both the historical and modern approaches in the next few chapters.
 
-In the topic of dynamics we will cover 1) basic terminology of dynamical systems, 2) simple dynamical systems from physics, 3) the dynamics of articulated robots, and 4) contact mechanics. In controls will describe methods for 1) analyzing stability of controlled dynamical systems, 2) controlling articulated robots with high accuracy, and 3) generating feasible and optimal control strategies.
+In the topic of dynamics we will cover <br><br>1) basic terminology of dynamical systems, <br>2) simple dynamical systems from physics, <br>3) the dynamics of articulated robots, and<br> 4) contact mechanics. In controls will describe methods for <br><br>1) analyzing stability of controlled dynamical systems, <br>2) controlling articulated robots with high accuracy, and <br>3) generating feasible and optimal control strategies.
          </p>
-         <h1>  MAX6675 K-Thermocouple IC Working </h1></br>
+         <h1>  Discrete-time system </h1></br>
          <p>
-          The function of the thermocouple is to sense a difference in 
-          temperature between two ends of the thermocouple wires.
-           The thermocouple’s hot junction can be read from 0°C to +1023.75°C.
-            The cold end (ambient temperature of the board on which the MAX6675 is mounted)
-             can only range from -20°C to +85°C. While the temperature at the cold end fluctuates, the MAX6675 continues to accurately sense the temperature difference at the opposite end. The MAX6675 senses and corrects for the changes in the ambient temperature with cold-junction compensation. The device converts the ambient temperature reading into a voltage using a temperature-sensing diode. To make the actual thermocouple temperature measurement, the MAX6675 measures the voltage from the thermocouple’s output and the sensing diode. The device’s internal circuitry passes the diode’s voltage (sensing ambient temperature) and thermocouple voltage (sensing remote temperature minus ambient temperature) to the conversion function stored in the ADC to calculate the thermocouple’s hot-junction temperature. Optimal performance from the MAX6675 is achieved when the thermocouple cold junction and the MAX6675 are at the same temperature. The MAX6675 includes signal-conditioning hardware to convert the thermocouple’s signal into a voltage compatible with the input channels of the ADC. The T+ and T inputs connect 
-          to internal circuitry that reduces the introduction of noise errors from the thermocouple wires.
+          In many cases it is convenient to talk about discrete-time systems in which time is no longer a continuous variable but a discrete quantity  t=0,1,2,… , and the dynamics are specified in the form
+xt+1=f(xt,ut)
+Here, the control is allowed to change only at discrete points in time, and the state is only observed at discrete points in time. This more accurately characterizes digital control systems which operate on a given clock frequency. However, in many situations the control frequency is so high that the continuous-time model is appropriate.
          </p>
-         <h1>Components Required to build a PID Enabled Temperature Controller</h1><br>
-         The components required to build the MAX6675 based PID Controlled Heater are listed below, we designed this circuit with very generic components, which makes the replication process very easy.
+         <h1>Converting higher-order dynamic systems into first-order systems</h1><br>
+         Often, we shall see systems of the form<br>
 
-        <li> Arduino Nano - 1
-         <li>128 X 64 OLED Display - 1
-        <li> Generic Rotary Encoder - 1
-        <li> MAX6675 Module - 1
-        <li> K-type Thermocouple - 1
-        <li> Breadboard - 1
-        <li> Jumper Wires - 1</li></br>
-          <h1>Setting of the Temperature</h1></br>
-<p> A rotary encoder is utilized to specify the set point temperature. The rotary encoder works in two 
-  modes, temperature setting mode and feedback measuring mode. The temperature setting mode will 
-  be used to set the temperature by increasing or decreasing the data based on the user’s input and the 
-  feedback measuring mode is used to display the feedback value obtained from K-type 
-  thermocouple. The temperature can also be set by the interface provided by the website.</p>
-  <h1>Setting and maintaining of Temperature</h1></br>
-<p>The system consists of a K-type thermocouple and an analog to digital converter, namely MAX6675 
-  IC. It can record temperature changes in the hundreds of degrees Celsius range without trouble. The 
-  thermocouple’s hot junction can be read from 0°C to 1022°C.<br><br>
-  The MAX6675 K-type Thermocouple functions as an analog-to-digital converter module and is used 
-to read thermocouple temperature data. The thermocouple monitors temperature differences between 
-the two ends of the thermocouple wires. As described above in section 3.3, a generic rotary encoder 
-is used to regulate the temperature and adjust the modes. Since this fixed temperature was previously 
-determined and the desired temperature requires a real-time display of the temperature data, a 128x64 
-OLED display was chosen. The display shows the temperature data as well as the temperature that 
-has been set.
+x¨=f(x,x˙,u)<br>
+which relate state and controls to accelerations of the state  x¨=d2xdt2 . 
+This does not seem to satisfy our definition of a dynamic system, since we've never seen a double time derivative.
+ However, we can employ a stacking trick to define a first order system, but of twice the dimension. 
+ Let us define the stacked state vector<br>
+
+y≡[xx˙]<br>
+Then, we can rewrite  in a first-order form as:<br>
+
+y˙=g(y,u)<br>
+where  g(y,u)≡f(x,x˙,u)  simply "unstacks" the state and velocity from  y . Now all of the machinery of first-order systems can be applied to the second order system. This can also be done for dynamic systems of order 3 and higher, wherein all derivatives are stacked into a single vector.
+
+<!-- (Note that to define an initial state  y0 , we will need to specify the initial position  x0  as well as the velocity  x˙0 .) -->
+
+          <h1>ODE Integration</h1></br>
+<p> 
+  Consider a controlled, continuous time dynamic system  x˙=f(x,u) , with  x∈Rn  and  u∈Rm . Suppose we are given an initial state  x0  encountered at  t=0 , and a control  u(x,t)  defined for  t≥0 . Solving for the state trajectory requires solving an initial value problem of an ordinary differential equation (ODE):<br><br>
+  
+  Find x(t) for t>0 subject to x˙(t)=g(x(t),t) and x(0)=x0<br>
+  where  g(x,t)≡f(x,u(x,t))  is a time-varying dynamics function. <br>
+  (Note that we have applied the simple trick of pushing the control  u  inside  g , which turns the controlled system into an uncontrolled system.)
+  
+  For some limited classes of dynamic systems and control trajectories we can solve the ODE analytically. We shall see some of these solutions for the Dubins car and linear time invariant systems. However, in the general case, we shall need to resort to numerical methods. This problem is known as ODE integration (also known as simulation).
   </p>
-  <h1>Mathematical Analysis and Calculations</h1>
-  <p>The combination of proportional, integral, and derivative control operations is called PID control 
-    operation. The PID controller is commonly used to control the time domain behaviour of many 
-    different types of dynamic plants. These regulators are usually very popular because they provide 
-    excellent closed-loop response characteristics.<br><br>
-    Consider the feedback system architecture shown in the given figure. In this architecture, it can be 
-    assumed that the equipment is a DC motor and its speed needs to be precisely controlled.
-    The PID controller is placed in the forward path so that its output is the voltage applied to the 
-    armature of the motor, and the feedback signal is the speed measured by the Photoelectric speed 
-    sensor encoder. The output velocity signal C (t) is summed with the reference signal or command 
-    signal R (t) to form the error signal e (t). Finally, the error signal is the input to the PID controller<br><br>
-    u(t)=Kp.e(t) + Ki ∫e(t) +Kd. d e(t)/ dt(t) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - eqn. (1)</p>
-    <h1>Result & Conclusion</h1>
-    <p>  The Rotary encoder in 2nd mode will set the temperature to a desired value. Once the 
-      controller detects the set value, the feedback from MAX6675 module will provide the current value 
-      of temperature to OLED display as shown in figure.<br><br>
-     In this experiment, we have been able to produce the feedback from the MAX6675 module, which is 
-      connected to any desired system for temperature measurement. The current value of temperature is 
-      getting closer to the set value in a certain time. </p>
+  <h1>Euler's method</h1>
+  <p>The simplest numerical integration technique is known as Euler's method, which divides time into a sequence of small steps of  Δt  in which the dynamics are assumed constant. Each subsequent movement simply displaces the state by the first-order approximation  Δtg(x(t),t) . What emerges is a sequence of states  x0,…,xN  given by:<br><br>
+
+    x1=x0+Δt⋅g(x0,Δt⋅0)<br>
+    x2=x1+Δt⋅g(x1,Δt⋅1)<br>
+   
+    xN=xN−1+Δt⋅g(xN−1,Δt⋅(N−1))<br>
+    This is a widely-used technique due to its straightforward implementation, and it is also easy to analyze. Code for this method is given below.<br></p>
+    Note that the accuracy of the integration depends heavily on the timestep chosen. In general, the smaller the timestep, the more accurate the integration will be. More formally, define the integration error as  ϵ(t)=x(t)−x⌊t/Δt⌋ . Higher errors result as<br>
+
+The spatial variation of the dynamics function is large. More precisely, the error will grow if the Jacobian of f (in either x or u) are large.
+
+The time  t  is large (i.e., the error generally gets worse over time).
+
+Δt  is large.
+    <h1>Higher Order Integrators</h1>
+    <p>  A great deal of work has investigated ODE integration techniques that are more accurate than Euler integration. Rather than approximate the dynamics function as a first order Taylor expansion,
+       they may use higher order terms to achieve lower approximation error. A popular class of higher order methods are the Runge-Kutta methods, which use multiple evaluations of the dynamics function to achieve far lower error 
+       than standard Euler integration.<br><br>
+       More advanced methods may also use adaptive step size, which take smaller steps where the dynamics function is found to be more highly varying.<br>
+
+      Many numerical libraries have a variety of integrators to choose from. For example, the below plot shows an integrator used in Scipy library, which is, in fact, exact for this dynamics function. </p>
+      <h1>Stability, convergence, and divergence</h1>
+      <p> A dynamic system is said to be:
+
+        Stable for some class of initial states if its solution trajectories do not grow without bound,
+        
+        Unstable (or divergent) if the trajectories grow without bound, and
+        
+        Convergent if the solution trajectories approach a single point.<br>
+        
+        A stable point is a state x such that for some neighborhood of x, the ODE is convergent toward x. A necessary condition for a point to be stable is that it is an equilibrium point.<br>
+        
+        Equilibrium point. For a continuous time dynamical system, a state x such that x˙=f(x)=0. For a discrete time dynamical system, a state that satisfies x=f(x).<br>
+        
+        All stable points are equilibria, but the converse is not true. For example, in the system x˙=x, x=0 is an equilibrium point, but it is not stable. Through inspection, observe that x(t)=cet is a solution to this differential equation. <br>
+        Hence, a tiny perturbation x(0)=ϵ would yield the solution trajectory x(t)=ϵet, which grows without bound as t grows.<br>
+        
+        The trajectories derived from Euler integration can be divergent even when the underlying system itself is stable or convergent. As an example, consider the damped harmonic oscillator system<br>
+        </p>
+        <h1>Summary</h1>
+        <p>Continuous-time dynamic systems are represented by a dynamics equation in the canonical form  x˙(t)=f(x(t),u(t)) , where  x  is the state trajectory and  u  is the control trajectory. <br><li>Discrete-time systems are represented by the form  xt+1=f(xt,ut)<br>
+          <li>Integration (or simulation) is needed to determine the trajectory that the state will follow under a given control.<br><li> Numerical instability can result with a time step that is too large.<br>
+        <li>  Dynamic systems can be convergent, stable, or divergent under a given controller.</p>
         </div>
 
       </div>
