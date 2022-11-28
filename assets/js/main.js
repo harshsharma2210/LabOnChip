@@ -378,8 +378,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
         // ...add an html radio button
         answers.push(
           '<label>'
-            + ' ' + '<input type="radio" + name="question' + i +' "  value="'+letter+'">'
-           + ' ' + letter + ': '
+            + '<input type="radio" + name="question' + i +'"  value="'+letter+'">'
+            + letter + ': '
             + questions[i].answers[letter] + '&nbsp;' + '&nbsp;'
           + '</label>'
         );
@@ -440,3 +440,5 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   }
 
 }
+
+
