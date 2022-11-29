@@ -39,7 +39,7 @@
 
   <main id="main">
     <div class="section-title">
-      <h2>Arduino PID Temperature Controller  </h2>
+      <h3>Arduino PID Temperature Controller  </h3>
       <!-- <p>using MAX6675 K-Thermocouple to Digital Converter IC </p> -->
     </div>
     <!-- ======= Portfolio Details Section ======= -->
@@ -109,7 +109,7 @@
               </p>
             </div>
           </div>
-          <h1>How does a Temperature PID Controller work?</h1><br>
+          <h3>How does a Temperature PID Controller work?</h3><br>
           <p>
           As in any PID control first, we need to be aware of the
            output or what we want the controller to do, for this project we 
@@ -117,7 +117,7 @@
            (we will set that temperature with the help of the rotary encoder) so to maintain the temperature we need to read out of the temperature, 
            for that we are using a K-type thermocouple, in conjunction with MAX6675 Cold-Junction-Compensated K-Thermocouple to Digital Converter IC that can measure hundreds of degree Celsius without any issues. And the temperature readout from the thermocouple acts as feedback. Now as we have set the temperature we want to achieve and we have a real-time readout of the temperature value the controller can calculate the error value and with the help of proportional integral and derivative control the system can achieve its target, for
            this project we will control a PWM signal with the calculated output value. That is how a Temperature Based PID controller works.</p>
-         <h1>  MAX6675 K-Thermocouple IC Working </h1></br>
+         <h3>  MAX6675 K-Thermocouple IC Working </h3></br>
          <p>
           The function of the thermocouple is to sense a difference in 
           temperature between two ends of the thermocouple wires.
@@ -126,7 +126,7 @@
              can only range from -20°C to +85°C. While the temperature at the cold end fluctuates, the MAX6675 continues to accurately sense the temperature difference at the opposite end. The MAX6675 senses and corrects for the changes in the ambient temperature with cold-junction compensation. The device converts the ambient temperature reading into a voltage using a temperature-sensing diode. To make the actual thermocouple temperature measurement, the MAX6675 measures the voltage from the thermocouple’s output and the sensing diode. The device’s internal circuitry passes the diode’s voltage (sensing ambient temperature) and thermocouple voltage (sensing remote temperature minus ambient temperature) to the conversion function stored in the ADC to calculate the thermocouple’s hot-junction temperature. Optimal performance from the MAX6675 is achieved when the thermocouple cold junction and the MAX6675 are at the same temperature. The MAX6675 includes signal-conditioning hardware to convert the thermocouple’s signal into a voltage compatible with the input channels of the ADC. The T+ and T inputs connect 
           to internal circuitry that reduces the introduction of noise errors from the thermocouple wires.
          </p>
-         <h1>Components Required to build a PID Enabled Temperature Controller</h1><br>
+         <h3>Components Required to build a PID Enabled Temperature Controller</h3><br>
          The components required to build the MAX6675 based PID Controlled Heater are listed below, we designed this circuit with very generic components, which makes the replication process very easy.
 
         <li> Arduino Nano - 1
@@ -136,13 +136,13 @@
         <li> K-type Thermocouple - 1
         <li> Breadboard - 1
         <li> Jumper Wires - 1</li></br>
-          <h1>Setting of the Temperature</h1></br>
+          <h3>Setting of the Temperature</h3></br>
 <p> A rotary encoder is utilized to specify the set point temperature. The rotary encoder works in two 
   modes, temperature setting mode and feedback measuring mode. The temperature setting mode will 
   be used to set the temperature by increasing or decreasing the data based on the user’s input and the 
   feedback measuring mode is used to display the feedback value obtained from K-type 
   thermocouple. The temperature can also be set by the interface provided by the website.</p>
-  <h1>Setting and maintaining of Temperature</h1></br>
+  <h3>Setting and maintaining of Temperature</h3></br>
 <p>The system consists of a K-type thermocouple and an analog to digital converter, namely MAX6675 
   IC. It can record temperature changes in the hundreds of degrees Celsius range without trouble. The 
   thermocouple’s hot junction can be read from 0°C to 1022°C.<br><br>
@@ -154,7 +154,7 @@ determined and the desired temperature requires a real-time display of the tempe
 OLED display was chosen. The display shows the temperature data as well as the temperature that 
 has been set.
   </p>
-  <h1>Mathematical Analysis and Calculations</h1>
+  <h3>Mathematical Analysis and Calculations</h3>
   <p>The combination of proportional, integral, and derivative control operations is called PID control 
     operation. The PID controller is commonly used to control the time domain behaviour of many 
     different types of dynamic plants. These regulators are usually very popular because they provide 
@@ -166,7 +166,7 @@ has been set.
     sensor encoder. The output velocity signal C (t) is summed with the reference signal or command 
     signal R (t) to form the error signal e (t). Finally, the error signal is the input to the PID controller<br><br>
     u(t)=Kp.e(t) + Ki ∫e(t) +Kd. d e(t)/ dt(t) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - eqn. (1)</p>
-    <h1>Result & Conclusion</h1>
+    <h3>Result & Conclusion</h3>
     <p>  The Rotary encoder in 2nd mode will set the temperature to a desired value. Once the 
       controller detects the set value, the feedback from MAX6675 module will provide the current value 
       of temperature to OLED display as shown in figure.<br><br>
@@ -177,6 +177,16 @@ has been set.
 
       </div>
     </section><!-- End Portfolio Details Section -->
+    <!-- <sectoin>
+      <div class="heading"><h1> Quiz</h1></div> -->
+      
+      <!-- <div class="test"> -->
+      <!-- <div id="quiz"></div>
+<button  id="submit" >Get Results</button>
+<div id="results"></div> -->
+<!-- </div> -->
+<!-- <a href="https://simplestepscode.com/javascript-quiz-tutorial/" target="_blank">Click here for the JavaScript quiz tutorial (in case you're on CodePen)</a> -->
+      <!-- </sectoin> -->
 
   </main><!-- End #main -->
   <footer id="footer">
@@ -210,3 +220,4 @@ has been set.
 </body>
 
 </html>
+
