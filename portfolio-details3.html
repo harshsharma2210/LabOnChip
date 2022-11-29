@@ -96,7 +96,7 @@
               </p>
             </div>
           </div>
-         <h1>The Problem</h1>
+         <h3>The Problem</h3>
          <p>The problem
           Our system has an input value taken in by sensors every x time units (minutes, seconds, milliseconds; in abstract it doesn’t matter). Depending on said value a proper output response has to be calculated in order to reach a desired state. To throw in some examples, we could be talking about:
           
@@ -109,11 +109,11 @@
           From a purely theoretical standpoint the problem can be defined by variable representing the current state of the system (temperature, flow, position,…). The input read every period is the process variable (or PV); the goal of our control system is to reach and maintain a certain value for this variable, called the SetPoint (or SP). At any given moment t it’s useful to consider
            the current error, given by the difference between the SetPoint and the process variable, e(t) = SP-PV.<br><br>
            The core of PID techniques is to tune the output on the system based on the behaviour of the error function. Said output is (in theory) the result of the following formula:
- <h2>Out(t) = Kpe(t) + Ki<span>&#8747;</span>edt + Kd de/dt</h2><br><br>
+ <h3>Out(t) = Kpe(t) + Ki<span>&#8747;</span>edt + Kd de/dt</h3><br><br>
 
 where t is the time and e is the error function. e(t) is nothing but the error in the system (SP-PV, the actual value minus what we want to achieve) at time instant t. Kp, Ki and Kd are the coefficients for each component (proportional, integral and derivative) and the parameters to be changed to tune the effectiveness of the formula.
           </p><br><br>
-        <h1>  Proportional</h1>
+        <h3>  Proportional</h3>
 <p>This is the simplest and most straightforward to understand part of a PID function. To compute the output at time t it takes the error value and multiply it by a coefficient (Kp), and that’s it.
 
 Take the flow control device example. We want to reach a current of 80 liters per minute and we’re currently sitting at 40. the error is<br>
@@ -132,7 +132,7 @@ Maybe we want to avoid overshooting as much as possible. In the cart example, we
 few seconds later instead of oscillating back and forward a couple of times because we were too hasty. It depends on the goal of the control.
 
 Typically the device needs to be tested with different Kp values to see how fast you can go without jeopardizing stability.</p><br><br>
-<h1>Integral</h1>
+<h3>Integral</h3>
 The proportional is very straightforward, but is also prone to problematic situations.
 
 Imagine that Kp is very small to avoid overshooting and time is not an issue. In the cart example everything would turn out ok; it approaches the destination as slowly as it can to avoid passing it. In the water current example problems may arise.<br><br>
@@ -152,7 +152,7 @@ The solution is to take in account the error over time, which is exactly the job
 are timing issues will result in a cluster of raw delays and
  approximate calculations that might get the job done but are frail and confused.<br><br>
  [the integral of a function f] is defined […] as the signed area of the region in the xy-plane that is bounded by the graph of f, the x-axis and the vertical lines x = a and x = b. The area above the x-axis adds to the total and that below the x-axis subtracts from the total.
-<h1>Derivative</h1>
+<h3>Derivative</h3>
 Last but not least, the derivative component. Well, in a way, this is the least frequently used component. Most system can make do with just P and I, with the derivative bringing only slight improvements.<br>
 
 To begin with, the derivative component is the only one that would never reach the SetPoint on its own;
@@ -217,3 +217,4 @@ It’s useful, but also very difficult to tune. An excessive reactivity to chang
 </body>
 
 </html>
+
